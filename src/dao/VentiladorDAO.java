@@ -80,7 +80,7 @@ public class VentiladorDAO {
         PreparedStatement stmt = null;
         String linha = ventilador.getCodigo();
 
-        String sql = String.format("update Ventilador set codigo=?, marca=?, modelo=?, cor=? where codigo=%s",
+        String sql = String.format("update ventilador set codigo=?, marca=?, modelo=?, cor=? where codigo=%s",
                 linha);
 
         try {
@@ -88,9 +88,9 @@ public class VentiladorDAO {
             stmt = conexaoBD.prepareStatement(sql);
 
             stmt.setString(1, ventilador.getCodigo());
-            stmt.setString(3, ventilador.getMarca());
-            stmt.setString(4, ventilador.getModelo());
-            stmt.setString(5, ventilador.getCor());
+            stmt.setString(2, ventilador.getMarca());
+            stmt.setString(3, ventilador.getModelo());
+            stmt.setString(4, ventilador.getCor());
 
             stmt.executeUpdate();
 

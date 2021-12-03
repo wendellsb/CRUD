@@ -80,7 +80,7 @@ public class CamisaDAO {
         PreparedStatement stmt = null;
         String linha = camisa.getCodigo();
 
-        String sql = String.format("update Camisa set codigo=?, marca=?, modelo=?, cor=? where codigo=%s",
+        String sql = String.format("update camisa set codigo=?, marca=?, modelo=?, cor=? where codigo=%s",
                 linha);
 
         try {
@@ -88,9 +88,9 @@ public class CamisaDAO {
             stmt = conexaoBD.prepareStatement(sql);
 
             stmt.setString(1, camisa.getCodigo());
-            stmt.setString(3, camisa.getMarca());
-            stmt.setString(4, camisa.getModelo());
-            stmt.setString(5, camisa.getCor());
+            stmt.setString(2, camisa.getMarca());
+            stmt.setString(3, camisa.getModelo());
+            stmt.setString(4, camisa.getCor());
 
             stmt.executeUpdate();
 
